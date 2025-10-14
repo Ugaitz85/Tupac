@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Craze - Juego Viral</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Coin Craze</h1>
+      <p class="tagline">
+        ¡Haz clic en las monedas, supera récords diarios y desbloquea recompensas!
+      </p>
+    </header>
+
+    <main>
+      <section class="hud">
+        <div class="stats">
+          <div class="stat">
+            <span class="label">Puntaje:</span>
+            <span id="score">0</span>
+          </div>
+          <div class="stat">
+            <span class="label">Combo:</span>
+            <span id="combo">1x</span>
+          </div>
+          <div class="stat">
+            <span class="label">Tiempo:</span>
+            <span id="timer">60s</span>
+          </div>
+          <div class="stat">
+            <span class="label">Mejor puntaje:</span>
+            <span id="best-score">0</span>
+          </div>
+        </div>
+
+        <div class="timer-track" aria-hidden="true">
+          <div class="timer-fill" id="timer-fill"></div>
+        </div>
+
+        <div class="actions">
+          <button id="start-button" class="primary">Iniciar partida</button>
+          <button id="share-button" class="secondary">Compartir reto</button>
+        </div>
+      </section>
+
+      <section class="game-area" id="game-area" aria-live="polite">
+        <p class="placeholder" id="game-placeholder">
+          Pulsa «Iniciar partida» para comenzar.
+        </p>
+      </section>
+
+      <section class="store">
+        <h2>Monetización y tienda</h2>
+        <div class="store-grid">
+          <article class="store-item">
+            <h3>Multiplicador Premium</h3>
+            <p>Duplica tus puntos por 30 minutos.</p>
+            <button data-upgrade="multiplier" class="purchase">Comprar 1.99€</button>
+          </article>
+          <article class="store-item">
+            <h3>Modo sin anuncios</h3>
+            <p>Disfruta de la experiencia sin distracciones.</p>
+            <button data-upgrade="noAds" class="purchase">Comprar 2.99€</button>
+          </article>
+          <article class="store-item">
+            <h3>Paquete de monedas</h3>
+            <p>Consigue 5.000 monedas extra para mejorar tu ranking.</p>
+            <button data-upgrade="coins" class="purchase">Comprar 0.99€</button>
+          </article>
+        </div>
+        <p class="disclaimer">
+          Integra tu pasarela de pago favorita (Stripe, PayPal, etc.) conectando estos
+          botones a tus endpoints. Mientras desarrollas, usa enlaces de prueba para
+          validar conversiones.
+        </p>
+      </section>
+
+      <section class="ads">
+        <h2>Zona patrocinada</h2>
+        <div class="ad-card">
+          <p>Espacio para publicidad programática (AdSense, AppLovin, Unity Ads...).</p>
+          <button id="view-ad" class="secondary">Ver anuncio y ganar 100 monedas</button>
+        </div>
+      </section>
+
+      <section class="tips">
+        <h2>Estrategias virales</h2>
+        <ul>
+          <li>Publica desafíos diarios con premios y compártelos en redes sociales.</li>
+          <li>Incluye tablas de clasificación global y semanal.</li>
+          <li>Ofrece recompensas por invitar amigos mediante códigos de referido.</li>
+          <li>Agrega mini eventos temáticos y skins coleccionables.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <small>&copy; 2024 Coin Craze. Todos los derechos reservados.</small>
+    </footer>
+
+    <div class="dialog" id="share-dialog" hidden>
+      <div class="dialog-content">
+        <h3>Comparte y hazlo viral</h3>
+        <p id="share-message">
+          Copia este mensaje y publícalo en tus redes: «¿Cuántas monedas puedes atrapar?
+          Supera mi récord en Coin Craze 👉 https://tudominio.com/coincraze»
+        </p>
+        <div class="dialog-actions">
+          <button id="copy-message" class="secondary">Copiar mensaje</button>
+          <button id="close-dialog" class="primary">Listo</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
